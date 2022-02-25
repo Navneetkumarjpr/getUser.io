@@ -7,12 +7,12 @@ import loader from './load.png'
 function App() {
   const [info, setInfo] = useState([]);
   const [loading, setLoading] = useState(true);
-  let detail=null;
+
 
   const getUsers = async()=>{
         setLoading(false);
     try {
-        detail = await axios.get(`https://reqres.in/api/users?page=${1}`);
+        const detail = await axios.get(`https://reqres.in/api/users?page=${1}`);
         setInfo(detail.data.data);
         setLoading(true);
         console.log("info ",info);
